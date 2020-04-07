@@ -1,0 +1,40 @@
+# Choosing a dynamic programming approach
+# using memoizitation and a hash table to
+# store results
+
+from collections import defaultdict
+
+# Will store all results with n being the
+# first key and Z being the second key
+saved = defaultdict(dict)
+
+def Amount(n=2, Z=8, m=6):
+
+    # Get hash table in scope
+    # global saved
+
+    # Stores the result of the recursive
+    # computation here
+    result = 0
+
+    # Base cases
+    if (not n) and (not Z):
+        return 1
+    elif (n and not Z) or (not n and Z):
+        return 0
+    # Recursion case
+    else:
+        for i in range(1,m+1):
+            try:
+                result += saved[n][Z]
+            except KeyError:
+                result += Amount(n-1, Z-i, m)
+
+    # Save the result when computing is done
+    saved[n][Z] = result
+    return result
+
+
+print(Amount())
+
+

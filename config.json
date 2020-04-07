@@ -1,0 +1,8 @@
+{
+  "languages" : ["de", "en"],
+  "titles_path": "../Dumps/main_to_redirect.txt",
+  "state_path": "../Saved/",
+  "save_path": "/Users/marcelbraasch/Desktop/ ",
+  "commands_path": "../Commands/",
+  "dumps_path": "../Dumps/"
+}
